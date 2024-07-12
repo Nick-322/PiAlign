@@ -34,7 +34,7 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 
 	* And run the code below:
 
-			source <environment_name>/bin/activate
+			source <PATH_TO_environment>/bin/activate
 
 
 	* Lastly, run:
