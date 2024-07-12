@@ -1171,14 +1171,13 @@ if pdb_file1 and pdb_file2:
         receptor_ligand_pair = []
         valid_super_int_chain_dict1 = filter_iden_int_and_find_large_int(input_stem1, pdb_file1, pchains1a, pchains1b)
         
-        '''
         for ligands, receptors in valid_super_int_chain_dict1.items():
             receptor_ligand_pair_per_key = list(itertools.product(receptors, [ligands]))
             receptor_ligand_pair.extend(receptor_ligand_pair_per_key)
 
         for receptor, ligand in receptor_ligand_pair:
             interface_extraction_and_alignment(pdb_file1, receptor, ligand, pdb_file2, pchains2a, pchains2b)
-        '''
+            
     elif search_interface_chain2 and not search_interface_chain1:
         receptor_ligand_pair = []
         valid_super_int_chain_dict2 = filter_iden_int_and_find_large_int(input_stem2, pdb_file2, pchains2a, pchains2b)
