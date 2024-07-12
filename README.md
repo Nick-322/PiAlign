@@ -26,7 +26,6 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 		> conda env create -f environment.yml
 
 
-
 * #### Choice 2. Python venv
 	* Create a enironment by running the following code:
 
@@ -43,6 +42,19 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 			pip install -r requirements.txt
 
 
+#### Make sure to make the python/binary file executable by running: 
+
+	chmod +x <PATH_TO>/PiAlign/bin/PiAlign.py
+	
+	
+ * for Linux user:
+ 	
+		chmod +x <PATH_TO>/PiAlign/bin/IS-align_linux
+	
+* for Mac user:
+ 			
+		chmod +x <PATH_TO>/PiAlign/bin/IS-align_mac
+
 
 #### In the created environment, you may set the following alias:
 
@@ -51,7 +63,6 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 #### and invoke PiAlign by
 
   	pialign
-
 
 
 #### To run PiAlign successfuly, you will need to install dssp in your environment. ###
