@@ -65,7 +65,7 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
   	pialign
 
 
-#### To run PiAlign successfuly, you will need to install dssp in your environment. ###
+#### If you can't run PiAlign successfuly, you may need to install dssp in your environment. ###
 * For Linux user: run 
 
 		sudo apt-get install dssp
