@@ -7,7 +7,7 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 
 #### First, clone this repository by
 
-	git clone https://github.com/
+	git clone https://github.com/Nick-322/PiAlign
 
 #### To use PiAlign, you will have two choices to create a virtual enviroment with required dependencies.
 
