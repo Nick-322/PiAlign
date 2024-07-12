@@ -65,7 +65,7 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
   	pialign
 
 
-#### If you can't run PiAlign successfuly, you may need to install dssp in your environment. ###
+#### *If you can't run PiAlign successfuly, you may need to install dssp in your environment. ###
 * For Linux user: run 
 
 		sudo apt-get install dssp
@@ -90,20 +90,48 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 
 Two simple examples illustrating usage of PiAlign
 
-i. Align two protein-protein interfaces (one chain for each side of the interface)
+### i. Align two protein-protein interfaces (one chain for each side of the interface)
 
-../bin/PiAlign.py -p1 1lyl.pdb -c1a A -c1b C -p2 12as.pdb -c2a A -c2b B
+	../bin/PiAlign.py -p1 1lyl.pdb -c1a A -c1b C -p2 12as.pdb -c2a A -c2b B
 
 
 
-ii. Align two protein-protein interfaces with a multiple interface chain case where we don't know which chains interact with which chains for the first pdb file.
+### ii. Align two protein-protein interfaces with a multiple interface chain case where we don't know which chains interact with which chains for the first pdb file.
 
-../bin/PiAlign.py -p1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -p2 7uap.pdb -c2a HL -c2b A -searchIntCh1
+	../bin/PiAlign.py -p1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -p2 7uap.pdb -c2a HL -c2b A -searchIntCh1
 
 
 
 ## Output files
 
+This tool generates a pair of two main files: int.pdb and con.lst files.
+
+* #### int.pdb 
+
+int.pdb file contains atomic information of alpha carbons of residues involved in an interface. Each entry has the same types of information as PDB file except for Occupancy, which is repaced with secondary structure assignment (1: coil, 2: helix, 3: turn, 4: strand)
+
+* #### con.lst
+
+con.lst file provides a list of atomic and residue contacts between receptor chain(s) and ligand chain(s), highlighting a total atomic contacts and residue-residue contacts with specific interacting residues and their contact counts based on a 4.50 Å distance cutoff. Index is assined to each residue.
+
+### optional output files
+
+* #### parsed.pdb
+
+parsed.pdb is contains atomic information of all atoms of all residues in the selected ligand and receptor chains.
+
+* #### vmd
+
+vmd file contains a TCL script for visualizations of an interface with VMD. Molecule visualization styles is NewCartoon.
+
+* #### trans.pdb
+
+trans.pdb is a variant of the first int_pdb file where the atomic coordinates are modified by superposing them onto int_pdb2 using the transformation matrix that generates the optimal interface alignment.
+
+
+## Stdout
+
+Stdout shows the alignment result of a pair of protein-protein interfaces. It displays, IS-score, P-value, Z-score, Number of aligned residues between interfaces, Number of aligned contacts, RMSD, and Seq identity.  'Index Ch1 Resid1 AA1    Ch2 Resid2 AA2    Distance NAC NC1 NC2 Note'
 
 ## Reference
 
