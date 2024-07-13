@@ -131,7 +131,7 @@ trans.pdb is a variant of the first int_pdb file where the atomic coordinates ar
 
 ## Stdout
 
-Stdout shows the alignment result of a pair of protein-protein interfaces. It displays, IS-score, P-value, Z-score, Number of aligned residues between interfaces, Number of aligned contacts, RMSD, and Seq identity.  'Index Ch1 Resid1 AA1    Ch2 Resid2 AA2    Distance NAC NC1 NC2 Note'
+Stdout shows the alignment result of a pair of protein-protein interfaces. It displays, IS-score, P-value, Z-score, Number of aligned residues between interfaces, Number of aligned contacts, RMSD, and Seq identity. "Aligned Interface Residues" section has 12 column values. "Index" has indices of aligned interface residue pairs. "Ch1", "Resid1" and "AA1" are chainIDs, residue IDs, and 3 letter abbreviations of corresponding amino acids for the interface of the first PDB file. "Ch2", "Resid2" and "AA2" are for the interface of the second PDB file. "Distance" provides the distance between interface residues in angstrom. "NAC" provides the number of atomic contact. "NC1" and "NC2" gives the number of contact residues within interface in the first and second PDB files, respectively. "Note" denotes whether the interface residue pairs are within 5 Ansgtrom and residues are identical.
 
 ## Reference
 
