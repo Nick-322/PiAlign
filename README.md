@@ -9,25 +9,27 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 
 	git clone https://github.com/Nick-322/PiAlign
 
-#### To use PiAlign, you will have two choices to create a virtual enviroment with required dependencies.
+#### To use PiAlign, you will have two choices to create a virtual environment with required dependencies.
 
+"alias pialign='<PATH_TO>/PiAlign/bin/PiAlign.py'"
+"alias pialign='<PATH_TO>/PiAlign/bin/PiAlign.py'"
 * #### Choice 1. Conda
 
 	*If conda is not installed in your computer, refer to the guide from an official site:
 	https://conda.io/projects/conda/en/latest/user-guide/install/index.html
 
 
-	Once codnda is installed, create a enironment by running the following code:
-	* For MacOS (ARM64) user:
+	Once codnda is installed, create an environment by running the following code:
+	* For MacOS (ARM64) users:
 		> CONDA_SUBDIR=osx-64 conda env create -f <PATH_TO>/PiAlign/environment.yml
 
 
-	* For Linux (x86-64) user:
+	* For Linux (x86-64) users:
 		> conda env create -f environment.yml
 
 
 * #### Choice 2. Python venv
-	* Create a enironment by running the following code:
+	* Create an environment by running the following code:
 
 			python -m venv <environment_name>
 
@@ -47,11 +49,11 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 	chmod +x <PATH_TO>/PiAlign/bin/PiAlign.py
 	
 	
- * for Linux user:
+ * for Linux users:
  	
 		chmod +x <PATH_TO>/PiAlign/bin/IS-align_linux
 	
-* for Mac user:
+* for Mac users:
  			
 		chmod +x <PATH_TO>/PiAlign/bin/IS-align_mac
 
@@ -65,12 +67,12 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
   	pialign
 
 
-#### *If you can't run PiAlign successfuly, you may need to install dssp in your environment. ###
-* For Linux user: run 
+#### *If you can't run PiAlign successfully, you may need to install dssp in your environment. ###
+* For Linux users: run 
 
 		sudo apt-get install dssp
 
-* For Mac user:
+* For Mac users:
 1. Install MacPorts
 	* a. Install Apple's Command Line Developer Tools: 
 	    		
@@ -108,21 +110,21 @@ This tool generates a pair of two main files: int.pdb and con.lst files.
 
 * #### int.pdb 
 
-int.pdb file contains atomic information of alpha carbons of residues involved in an interface. Each entry has the same types of information as PDB file except for Occupancy, which is repaced with secondary structure assignment (1: coil, 2: helix, 3: turn, 4: strand)
+int.pdb file contains atomic information of alpha carbons of residues involved in an interface. Each entry has the same types of information as PDB file except for Occupancy, which is replaced with secondary structure assignment (1: coil, 2: helix, 3: turn, 4: strand)
 
 * #### con.lst
 
-con.lst file provides a list of atomic and residue contacts between receptor chain(s) and ligand chain(s), highlighting a total atomic contacts and residue-residue contacts with specific interacting residues and their contact counts based on a 4.50 Å distance cutoff. Index is assined to each residue.
+con.lst file provides a list of atomic and residue contacts between receptor chain(s) and ligand chain(s), highlighting the total atomic contacts and residue-residue contacts with specific interacting residues and their contact counts based on a 4.50 Å distance cutoff. An index is assigned to each residue.
 
 ### optional output files
 
 * #### parsed.pdb
 
-parsed.pdb is contains atomic information of all atoms of all residues in the selected ligand and receptor chains.
+parsed.pdb contains atomic information of all atoms of all residues in the selected ligand and receptor chains.
 
 * #### vmd
 
-vmd file contains a TCL script for visualizations of an interface with VMD. Molecule visualization styles is NewCartoon.
+vmd file contains a TCL script for visualizations of an interface with VMD. The molecule visualization styles is NewCartoon.
 
 * #### trans.pdb
 
@@ -132,9 +134,9 @@ trans.pdb is a variant of the first int_pdb file where the atomic coordinates ar
 
 Stdout shows the alignment result of a pair of protein-protein interfaces. It displays, IS-score, P-value, Z-score, Number of aligned residues between interfaces, Number of aligned contacts, RMSD, and Seq identity. "Aligned Interface Residues" section has 12 column values. "Index" has indices of aligned interface residue pairs. "Ch1", "Resid1" and "AA1" are chainIDs, residue IDs, and 3 letter abbreviations of corresponding amino acids for the interface of the first PDB file. "Ch2", "Resid2" and "AA2" are for the interface of the second PDB file. "Distance" provides the distance between interface residues' alpha carbons in angstrom. "NAC" provides the number of atomic contact. "NC1" and "NC2" gives the number of contact residues within interface in the first and second PDB files, respectively. "Note" denotes whether the interface residue pairs are within 5 Ansgtrom and residues are identical.
 
-## Acknowledgement
+## Acknowledgment
 
-PiAlign is built upon the pre-exisiting tool: iAlign, which was developed by Dr. Mu Gao in 2010. We are grateful of guidance and support from Dr. Gao during the development of this tool. Moreover, Additionally, this tool utilizes the free and open-source Python package [ProDy](http://prody.csb.pitt.edu/), which is developed by Bahar Lab at the Laufer Center, Stony Brook University.
+PiAlign is built upon the pre-existing tool named iAlign, which was developed by Dr. Mu Gao in 2010. We are grateful for the guidance and support from Dr. Gao during the development of this tool. Additionally, this tool utilizes the free and open-source Python package [ProDy](http://prody.csb.pitt.edu/), developed by Bahar Lab at the Laufer Center, Stony Brook University.
 
 ## Reference
 
