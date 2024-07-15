@@ -128,15 +128,13 @@ vmd file contains a TCL script for visualizations of an interface with VMD. Mole
 
 trans.pdb is a variant of the first int_pdb file where the atomic coordinates are modified by superposing them onto int_pdb2 using the transformation matrix that generates the optimal interface alignment.
 
-
 ## Stdout
 
 Stdout shows the alignment result of a pair of protein-protein interfaces. It displays, IS-score, P-value, Z-score, Number of aligned residues between interfaces, Number of aligned contacts, RMSD, and Seq identity. "Aligned Interface Residues" section has 12 column values. "Index" has indices of aligned interface residue pairs. "Ch1", "Resid1" and "AA1" are chainIDs, residue IDs, and 3 letter abbreviations of corresponding amino acids for the interface of the first PDB file. "Ch2", "Resid2" and "AA2" are for the interface of the second PDB file. "Distance" provides the distance between interface residues' alpha carbons in angstrom. "NAC" provides the number of atomic contact. "NC1" and "NC2" gives the number of contact residues within interface in the first and second PDB files, respectively. "Note" denotes whether the interface residue pairs are within 5 Ansgtrom and residues are identical.
 
 ## Acknowledgement
 
-This tool utilizes the free and open-source Python package [ProDy](http://prody.csb.pitt.edu/), which is developed by Bahar Lab at the Laufer Center, Stony Brook University.
-
+PiAlign is built upon the pre-exisiting tool: iAlign, which was developed by Dr. Mu Gao in 2010. We are grateful of guidance and support from Dr. Gao during the development of this tool. Moreover, Additionally, this tool utilizes the free and open-source Python package [ProDy](http://prody.csb.pitt.edu/), which is developed by Bahar Lab at the Laufer Center, Stony Brook University.
 
 ## Reference
 
@@ -147,3 +145,5 @@ This tool utilizes the free and open-source Python package [ProDy](http://prody.
 - Zhang, S., Krieger, J. M., Zhang, Y., Kaya, C., Kaynak, B., Mikulska-Ruminska, K., Doruker, P., Li, H., & Bahar, I. (2021). ProDy 2.0: Increased scale and scope after 10 years of protein dynamics modelling with Python. Bioinformatics, 37(20), 3657–3659. https://doi.org/10.1093/bioinformatics/btab187
 
 ## License
+
+PiAlign is available under MIT License. See LICENSE.rst for more details.
