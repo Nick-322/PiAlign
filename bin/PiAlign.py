@@ -31,9 +31,9 @@ confProDy(auto_secondary=True)
 parser = argparse.ArgumentParser(
     description="PiAlign extracts interfaces from protein complexes and performs structural alignment of interface pairs.",
     epilog="""Example usage:
-  PiAlign.py [options] -p1 <file1.pdb> -c1a <recptor_chainID(s)> -c1b <ligand_chainID(s)> -p2 <file2.pdb> -c2a <receptor_chainID(s)> -c2b <ligand_chainID(s)>
+  PiAlign.py [options] -f1 <file1.pdb> -c1a <recptor_chainID(s)> -c1b <ligand_chainID(s)> -f2 <file2.pdb> -c2a <receptor_chainID(s)> -c2b <ligand_chainID(s)>
 Practical case:
-  PiAlign.py -transPDB -writeVMD -p1 7e5r.pdb -c1a HL -c1b A -p2 7zfa.pdb -c2a DE -c2b AB
+  PiAlign.py -t -w -f1 7e5r.pdb -c1a HL -c1b A -f2 7zfa.pdb -c2a DE -c2b AB
 """
 )
 
