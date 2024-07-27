@@ -37,8 +37,8 @@ Practical case:
 """
 )
 
-parser.add_argument('-p1', '--pdb1', dest='pdb_file1', help="First PDB file")
-parser.add_argument('-p2', '--pdb2', dest='pdb_file2', help="Second PDB file")
+parser.add_argument('-f1', '--pdb1', dest='pdb_file1', help="First PDB file")
+parser.add_argument('-f2', '--pdb2', dest='pdb_file2', help="Second PDB file")
 parser.add_argument('-c1a', '--chain1a', dest='pchains1a', help="Protein chain(s) from the receptor side of an interface chain pair of PDB1")
 parser.add_argument('-c1b', '--chain1b', dest='pchains1b', help="Protein chain(s) from the ligand side of an interface chain pair of PDB1")
 parser.add_argument('-c2a', '--chain2a', dest='pchains2a', help="Protein chain(s) from the receptor side of an interface chain pair of PDB2")
@@ -47,11 +47,11 @@ parser.add_argument('-o', '--outdir', dest='output_directory', type=str, default
 
 # Advanced arguments group
 advanced = parser.add_argument_group('Advanced options')
-advanced.add_argument('-parsedPDB', dest='write_parsedPDB', action='store_true', help="Write a parsed PDB file")
-advanced.add_argument('-transPDB', dest='trans_parsedPDB', action='store_true', help="Write PDB file 1 transformed to give the best interface alignment to PDB file 2")
-advanced.add_argument('-writeVMD', dest='write_VMD', action='store_true', help="Write a VMD file of two interfaces that are superimposed")
-advanced.add_argument('-searchIntCh1', dest='search_interface_chain1', action='store_true', help="For PDB1, perform a rigorous, strict search of interface chain combinations that capture a unique/large interface")
-advanced.add_argument('-searchIntCh2', dest='search_interface_chain2', action='store_true', help="For PDB2, perform a rigorous, strict search of interface chain combinations that capture a unique/large interface")
+advanced.add_argument('-p', '--parsedPDB', dest='write_parsedPDB', action='store_true', help="Write a parsed PDB file")
+advanced.add_argument('-t', '--transPDB', dest='trans_parsedPDB', action='store_true', help="Write PDB file 1 transformed to give the best interface alignment to PDB file 2")
+advanced.add_argument('-w', '-writeVMD', dest='write_VMD', action='store_true', help="Write a VMD file of two interfaces that are superimposed")
+advanced.add_argument('-s1','-searchIntCh1', dest='search_interface_chain1', action='store_true', help="For PDB1, perform a rigorous, strict search of interface chain combinations that capture a unique/large interface")
+advanced.add_argument('-s2', '--searchIntCh2', dest='search_interface_chain2', action='store_true', help="For PDB2, perform a rigorous, strict search of interface chain combinations that capture a unique/large interface")
 
 # Parse the arguments
 args = parser.parse_args()
