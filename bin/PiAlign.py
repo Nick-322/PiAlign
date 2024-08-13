@@ -70,6 +70,11 @@ search_interface_chain1 = args.search_interface_chain1
 search_interface_chain2 = args.search_interface_chain2
 output_directory = args.output_directory
 
+# Create the output directory if it doesn't exist
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
+    print(f"Created output directory: {output_directory}")
+    
 start = time.time()
 if len(sys.argv) == 1:
     print('Error: invalid argument.')
