@@ -88,19 +88,39 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
 
 		sudo port install dssp
 
+
+## Arguments
+
+- '-f1', '--pdb1': First PDB file
+- '-f2', '--pdb2': Second PDB file")
+- '-c1a', '--chain1a': Protein chain(s) from the receptor side of an interface chain pair of PDB1
+- '-c1b', '--chain1b': Protein chain(s) from the ligand side of an interface chain pair of PDB1
+- '-c2a', '--chain2a': Protein chain(s) from the receptor side of an interface chain pair of PDB2
+- '-c2b', '--chain2b': Protein chain(s) from the ligand side of an interface chain pair of PDB2
+- '-o', '--outdir': Output directory (default: current directory
+
+## Advanced arguments group
+
+- '-p', '--parsedPDB': Write a parsed PDB (parsed.pdb) file
+- '-t', '--transPDB': Write a trans.pdb (PDB file 1 transformed to give the best interface alignment to PDB file 2)
+- '-w', '-writeVMD': Write a VMD file (.vmd) of two interfaces that are superimposed
+- '-s1','-searchIntCh1': For PDB1, perform a rigorous, strict search of interface chain combinations that capture a unique/large interface
+- '-s2', '--searchIntCh2': For PDB2, perform a rigorous, strict search of interface chain combinations that capture a unique/large interface
+
+
 ## Examples
 
 Two simple examples illustrating usage of PiAlign
 
 ### i. Align two protein-protein interfaces (one chain for each side of the interface)
 
-	../bin/PiAlign.py -p1 1lyl.pdb -c1a A -c1b C -p2 12as.pdb -c2a A -c2b B
+	../bin/PiAlign.py -f1 1lyl.pdb -c1a A -c1b C -f2 12as.pdb -c2a A -c2b B
 
 
 
 ### ii. Align two protein-protein interfaces with a multiple interface chain case where we don't know which chains interact with which chains for the first pdb file.
 
-	../bin/PiAlign.py -p1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -p2 7uap.pdb -c2a HL -c2b A -searchIntCh1
+	../bin/PiAlign.py -f1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -f2 7uap.pdb -c2a HL -c2b A -s1
 
 
 
