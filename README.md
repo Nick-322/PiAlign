@@ -114,13 +114,13 @@ Two simple examples illustrating usage of PiAlign
 
 ### i. Align two protein-protein interfaces (one chain for each side of the interface)
 
-	../bin/PiAlign.py -f1 1lyl.pdb -c1a A -c1b C -f2 12as.pdb -c2a A -c2b B
+	../bin/PiAlign.py -f1 1lyl.pdb -c1a A -c1b C -f2 12as.pdb -c2a A -c2b B -o output
 
 
 
 ### ii. Align two protein-protein interfaces with a multiple interface chain case where we don't know which chains interact with which chains for the first pdb file.
 
-	../bin/PiAlign.py -f1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -f2 7uap.pdb -c2a HL -c2b A -s1
+	../bin/PiAlign.py -f1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -f2 7uap.pdb -c2a HL -c2b A -s1 -o output
 
 
 
