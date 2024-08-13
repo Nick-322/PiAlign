@@ -471,6 +471,15 @@ def Int_Align(int_pdb_name1, int_pdb_name2, con_lst_name1, con_lst_name2):
         is_align_executable = os.path.join(os.path.dirname(__file__), 'IS-align_linux')
     else:
         raise OSError(f"Unsupported operating system: {system}")
+        
+        
+    # Check if the executable exists and is executable
+    if not os.path.isfile(is_align_executable):
+        print(f"Executable not found at path: {is_align_executable}")
+        return
+    if not os.access(is_align_executable, os.X_OK):
+        print(f"Executable not executable: {is_align_executable}")
+        return
 
     # Define paths to the input files
     int_pdb_path1 = os.path.join(output_directory, int_pdb_name1)
@@ -909,7 +918,7 @@ def interface_extraction_and_alignment(pdb_file1, pchains1a, pchains1b, pdb_file
     print("\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     print("+++++      Step 2: Extracting protein-protein interfaces ...     +++++")
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-    print("Using only Calpha atoms for defining protein-protein interfaces.\n")
+    print("Using only Calpha atoms for defining protein-protein interfaces (PPIs).\n")
     print(f"Minimum number of interface residue required: 20 AAs")
 
     # 1st PDB file
@@ -930,7 +939,7 @@ def interface_extraction_and_alignment(pdb_file1, pchains1a, pchains1b, pdb_file
     Int_CA_list = EditIntCA(Interface_list)
     int_pdb_name1 = WriteIntPDB(pdb_file1, Int_CA_list, pchains1a, pchains1b)
     con_lst_name1 = WriteContLst(pdb_file1, pchains1a, pchains1b, total_atomic_cont, total_cont_res, total_res_cont, res_res_contact_list)
-    print(f"{pdb_file1}: found 1 valid PPI(s) {''.join(pchains1a+pchains1b)} {total_cont_res}")
+    print(f"{pdb_file1}: found 1 valid PPI(s) chains {pchains1a} - {pchains1b}... {total_cont_res} AAs")
 
 
     # 2nd PDB file
@@ -950,7 +959,7 @@ def interface_extraction_and_alignment(pdb_file1, pchains1a, pchains1b, pdb_file
     Int_face_PDB2 = EditIntCA(Interface_list2)
     int_pdb_name2 = WriteIntPDB(pdb_file2, Int_face_PDB2, pchains2a, pchains2b)
     con_lst_name2 = WriteContLst(pdb_file2, pchains2a, pchains2b, total_atomic_cont2, total_cont_res2, total_res_cont2, res_res_contact_list2)
-    print(f"{pdb_file2}: found 1 valid PPI(s) {''.join(pchains2a+pchains2b)} {total_cont_res2}\n")
+    print(f"{pdb_file2}: found 1 valid PPI(s) chains {pchains2a} - {pchains2b}... {total_cont_res2} AAs\n")
 
 
 
