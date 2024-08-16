@@ -67,28 +67,6 @@ Proteins play fundamental roles in the living cells of all organisms, responsibl
   	pialign
 
 
-#### *If you can't run PiAlign successfully, you may need to install dssp in your environment. ###
-* For Linux users: run 
-
-		sudo apt-get install dssp
-
-* For Mac users:
-1. Install MacPorts
-	* a. Install Apple's Command Line Developer Tools: 
-	    		
-			xcode-select --install
-	  
-	* b. Install MacPorts for your version of the Mac operating system:
-			macOS Sonoma v14
-			macOS Ventura v13
-			macOS Monterey v12
-			macOS Big Sur v11
-
-2. Run 			
-
-		sudo port install dssp
-
-
 ## Arguments
 
 - '-f1', '--pdb1': First PDB file
@@ -121,6 +99,28 @@ Two simple examples illustrating usage of PiAlign
 ### ii. Align two protein-protein interfaces with a multiple interface chain case where we don't know which chains interact with which chains for the first pdb file.
 
 	../bin/PiAlign.py -f1 7e5s.pdb -c1a LEIJPRUVDHKTNOQS -c1b BCA -f2 7uap.pdb -c2a HL -c2b A -s1 -o output
+
+
+#### *If you can't run PiAlign successfully, you may need to install dssp in your environment. ###
+* For Linux users: run 
+
+		sudo apt-get install dssp
+
+* For Mac users:
+1. Install MacPorts
+	* a. Install Apple's Command Line Developer Tools: 
+	    		
+			xcode-select --install
+	  
+	* b. Install MacPorts for your version of the Mac operating system:
+			macOS Sonoma v14
+			macOS Ventura v13
+			macOS Monterey v12
+			macOS Big Sur v11
+
+2. Run 			
+
+		sudo port install dssp
 
 
 
